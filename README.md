@@ -18,9 +18,12 @@
 | 06 | SDKMAN：`sdk flush` | 缓存 |
 | 07 | 清空 `~/Desktop`、`~/Documents`、`~/Downloads`、`~/Music`、`~/Pictures`、`~/Videos` 的内容（保留文件夹本身） | **用户数据** |
 | 08 | 删除 `~/.claude` 文件夹和 `~/.claude.json` | **应用配置** |
+| 09 | `sudo dnf autoremove` + `sudo dnf clean all` | **系统（需 sudo）** |
+| 10 | `sudo journalctl --vacuum-time=7d` 清理 systemd 日志 | **系统（需 sudo）** |
 
 - 缺失的工具会自动跳过（比如没装 Docker 就跳 Step 01）。
-- Step 07、08 删的不是缓存，每步都有**单独的二次确认**，默认 No。
+- Step 07、08、09、10 删的不是缓存（或涉及系统级改动），每步都有**单独的二次确认**，默认 No。
+- Step 09、10 需要 `sudo`，会按需弹出密码提示；只有 Fedora/RHEL 系才有 `dnf`，其他发行版会跳过。
 
 ## 使用
 

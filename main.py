@@ -13,6 +13,7 @@ from cleaners.dev import (
     clean_rust,
     clean_sdkman,
 )
+from cleaners.system import clean_dnf, clean_journal
 from cleaners.user import clean_user_dirs
 
 # 输出大标题
@@ -55,5 +56,11 @@ clean_user_dirs()
 
 console.rule("Step 08: Claude")
 clean_claude()
+
+console.rule("Step 09: dnf")
+clean_dnf()
+
+console.rule("Step 10: systemd journal")
+clean_journal()
 
 console.rule("[green]全部完成[/green]")
